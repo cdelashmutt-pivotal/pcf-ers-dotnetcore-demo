@@ -186,7 +186,7 @@ else if (envInfo.IsSqlServerBound)
 }
 else
 {
-    var dbFile = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)!, "users.db");
+    var dbFile = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)!, "../tmp/users.db");
     services.AddDbContext<AttendeeContext>(db => db.UseSqlite($"DataSource={dbFile}"));
     logger.LogInformation("Database Provider: SQLite");
         

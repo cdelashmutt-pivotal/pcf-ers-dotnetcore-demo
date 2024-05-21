@@ -1,0 +1,18 @@
+apiVersion: apps.tanzu.vmware.com/v1
+kind: ContainerApp
+metadata:
+  creationTimestamp: null
+  name: cloudplatformdemo
+spec:
+  build:
+    buildpacks: {}
+    path: ../..
+    nonSecretEnv:
+    - name: BP_DOTNET_PROJECT_PATH
+      value: ./src/CloudPlatformDemo
+  nonSecretEnv:
+  - name: PLATFORM_NAME
+    value: TanzuApplicationPlatform
+  ports:
+  - name: main
+    port: 8080
